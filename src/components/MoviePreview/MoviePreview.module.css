@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    gap: 20px;
+}
+.itemsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.genres {
+    display: flex;
+    gap: 12px;
+}
+.genres>li {
+    list-style-type: none;
+}
+.poster {
+    width: 250px;
+    height: 375px;
+}

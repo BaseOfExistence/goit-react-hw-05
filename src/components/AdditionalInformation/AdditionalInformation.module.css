@@ -1,0 +1,11 @@
+.dopInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+    border: solid 1px black;
+    margin-top: 10px;
+}
+.dopLinks {
+    margin-left: 40px;
+}

@@ -1,0 +1,10 @@
+.actorPhoto{
+    width: 100px;
+    height: 150px;
+}
+.actorInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 40px;
+}

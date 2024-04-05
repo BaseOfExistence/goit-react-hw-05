@@ -1,0 +1,13 @@
+.goBack{
+    text-decoration: none;
+    color: black;
+    padding: 4px;
+    border: solid 1px black;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 100px;
+}
+

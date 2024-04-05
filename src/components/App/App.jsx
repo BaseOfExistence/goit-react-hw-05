@@ -1,22 +1,23 @@
-import Profile from "../Profile/Profile.jsx"
-import FriendList from "../FriendList/FriendList.jsx"
-import TransactionHistory from "../TransactionHistory/TransactionHistory.jsx"
-import userData from "../../userData.json"
-import friends from"../../friends.json"
-import transactions from "../../transactions.json"
+import Home from "../../pages/Home/Home"
+import Header from "../Header/Header"
+import MoviesPage from "../../pages/MoviesPage/MoviesPage"
+import MovieDetailsPage from "../../pages/MovieDetailsPage/MovieDetailsPage"
+import MovieCast from "../MovieCast/MovieCast"
+import MovieReviews from "../MovieReviews/MovieReviews"
+import { Routes, Route } from "react-router-dom"
 
 export default function App() {
   return (
     <>
-      <Profile
-        name={userData.username}
-        tag={userData.tag}
-        location={userData.location}
-        image={userData.avatar}
-        stats={userData.stats}
-      />
-      <FriendList friends={friends} />
-      <TransactionHistory items={transactions} />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/movies/:moviesId" element={<MovieDetailsPage />}>
+          <Route path="cast" element={<MovieCast />} />
+          <Route path="reviews" element={<MovieReviews />} />
+        </Route>
+      </Routes>
     </>
   )
 }
