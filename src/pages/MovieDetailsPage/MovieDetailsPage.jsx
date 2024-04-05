@@ -7,6 +7,7 @@ import MoviePreview from "../../components/MoviePreview/MoviePreview"
 import AdditionalInformation from "../../components/AdditionalInformation/AdditionalInformation"
 import Error from "../../components/Error/Error"
 import { FaArrowLeftLong } from "react-icons/fa6"
+import { useRef } from "react"
 
 export default function MovieDetailsPage() {
     const [movie, setMovie] = useState([])
@@ -14,6 +15,7 @@ export default function MovieDetailsPage() {
     const [isError, setIsError] = useState(false)
     const { moviesId } = useParams()
     const location = useLocation()
+    const backLinkRef = useRef(location.state ?? '/movies')
     useEffect(() => {
         const getMovies = async () => {
             try {
@@ -37,7 +39,7 @@ export default function MovieDetailsPage() {
     return (
         <>
             {isError && <Error />}
-            <Link className={css.goBack} to={location.state}><FaArrowLeftLong /><span>Go back</span></Link>
+            <Link className={css.goBack} to={backLinkRef.current}><FaArrowLeftLong /><span>Go back</span></Link>
             <MoviePreview movie={movie} movieGenres={movieGenres} />
             <AdditionalInformation />
             <Outlet />
