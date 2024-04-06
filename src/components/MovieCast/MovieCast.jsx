@@ -1,8 +1,7 @@
 import css from "./MovieCast.module.css"
 import { creditsData } from "../../backEndAPI"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { useEffect } from "react"
 import Error from "../../components/Error/Error"
 
 
@@ -38,9 +37,11 @@ export default function MovieCast() {
     return (
         <>
             {isError && <Error />}
-            <ul>
-            {actorData}
-            </ul>
+            {credits.length === 0 ? <p>We don&#39;t have any credits for this movie</p> :
+                <ul>
+                    {actorData}
+                </ul>
+            }
         </>
     )
 }

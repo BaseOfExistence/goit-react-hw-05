@@ -25,7 +25,6 @@ export default function MoviesPage() {
             }
             getMovies()
         }
-        return
     }, [query])
     const changeQuery = query => {
         setSearchParams({ query });

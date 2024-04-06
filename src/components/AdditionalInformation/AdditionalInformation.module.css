@@ -9,3 +9,11 @@
 .dopLinks {
     margin-left: 40px;
 }
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+.active {
+    color: chocolate;
+}

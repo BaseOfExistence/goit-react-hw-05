@@ -20,7 +20,7 @@ export default function MovieReviews() {
             }
         }
         getMovies()
-    }, [moviesId, reviews])
+    }, [moviesId])
     return (
         <>
             {isError && <Error />}

@@ -1,5 +1,10 @@
 import css from "./AdditionalInformation.module.css"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import clsx from 'clsx'
+
+const buildLinkClass = ({ isActive }) => {
+  return clsx(css.link, isActive && css.active);
+}
 
 export default function AdditionalInformation() {
     return (
@@ -7,10 +12,10 @@ export default function AdditionalInformation() {
             <p>Additional information</p>
             <ul className={css.dopLinks}>
                 <li>
-                    <Link to={"cast"}>Cast</Link>
+                    <NavLink to={"cast"} className={buildLinkClass}>Cast</NavLink>
                 </li>
                 <li>
-                    <Link to={"reviews"}>Reviews</Link>
+                    <NavLink to={"reviews"} className={buildLinkClass}>Reviews</NavLink>
                 </li>
             </ul>
         </div>
